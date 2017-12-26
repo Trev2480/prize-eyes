@@ -1,0 +1,70 @@
+/* Financial Planning Algorithm */
+
+/*Plan is to make predictions of expenses based on income*/
+
+/*Federal Poverty Lines - # of peopl in household; 100% Federal Poverty Line (FPL); 138% FPL; 250% FPL; 400% FPL;
+
+1, 12,060; 16,642; 30,150; 48,240;
+2, 16240; 22411; 40600; 64960;
+3, 20420; 28179; 51050; 81680;
+4, 24600; 33948; 61500; 98400;
+5, 28780; 39716; 71950; 115120;
+6, 32960; 45484; 82400; 131840;
+7, 37140; 51253; 92850; 148560;
+8, 41320; 57021; 103300; 165280;
+9, If # > 8, add $4,160 for each additional person.
+Start @ 12060 and add 4,180 for each person up to 8*/
+var Income = 50000;
+var numInHouse = 2;
+//var hasInsurance, hasInvestments;
+
+// base equation for 100% FPL
+if (numInHouse <= 8){
+    return (12060 + ((numInHouse-1)*4180)); //For HH under 8 people
+  } else {
+    return (41320 + ((numInHouse-8) * 4160)); //For HH over 8 people
+  };
+
+// Start Switch Statement here (need to simplify into an easy formula...see base equation for 100% FPL):
+switch (Income, numInHouse) {
+  case (Income <= 12060 && numInHouse = 1):
+    console.log('You are under the Federal Poverty Line.');
+  case (Income <= 16240 && numInHouse = 2):
+    console.log('You are under the Federal Poverty Line.');
+  case (Income <= 20420 && numInHouse = 3):
+    console.log('You are under the Federal Poverty Line.');
+  case (Income <= 24600 && numInHouse = 4):
+    console.log('You are under the Federal Poverty Line.');
+  case (Income <= 28780 && numInHouse = 5):
+    console.log('You are under the Federal Poverty Line.');
+  case (Income <= 32960 && numInHouse = 6):
+    console.log('You are under the Federal Poverty Line.');
+  case (Income <= 37140 && numInHouse = 7):
+    console.log('You are under the Federal Poverty Line.');
+  case (Income <= 41320 && numInHouse = 8):
+    console.log('You are under the Federal Poverty Line.');
+  case
+}
+//Make a FPL variable later? To be triggered by the income and household
+
+// 2. Expenses
+// After income, determining expenses is the next step in the planning process
+// You are supposed to have 6 months of your monthly expenses saved up in case of an emergency
+// Since Idk how to input yet, expense will be a % of income
+function savings (income) {
+    return income * (0.60);
+};
+//Listing of liabilities/debts, goals, then Risk Tolerance, then Investments and insurance
+
+
+// Possible Investment function
+if (hasInvestments === true) {
+  console.log('What is your risk tolerance?');
+} else {
+  console.log('Would you like to consider investing?');
+};
+
+//Possible Insurance Need function
+var insuranceNeed = (Assets, Need) => { //what does this syntax mean again?
+  return assets-need; //Don't forget to declare variables assets + Need;
+};
